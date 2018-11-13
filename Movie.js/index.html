@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie list</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <br>
+    <h1>Movie list</h1>
+    <br>
+
+    <form>
+
+        <fieldset name="movie">
+
+            <p>Movie</p>
+            <fieldset>
+
+                <!-- Title input -->
+                <label>Title</label>
+                <input type="text" name="movie-title" class="movie-title" placeholder="Title" required>
+
+                <!-- Movie length input -->
+                <label>Length (min)</label>
+                <input type="number" name="movie-length" class="movie-length" placeholder="Length in min" required>
+
+                <!-- Genre select dropdown  -->
+                <select name="genre-select" class="genre-select">
+                    <option value="">-</option>
+                    <option value="drama">Drama</option>
+                    <option value="action">Action</option>
+                    <option value="horror">Horror</option>
+                    <option value="commedy">Commedy</option>
+                    <option value="advanture">Advanture</option>
+                </select>
+
+                <!-- Error message initialy empty -->
+                <div class="movie-error error"></div>
+
+
+                <!-- Create movie button -->
+                <input type="button" class="create-movie" value="ADD MOVIE">
+
+                <!-- Movie list placeholder -->
+                <div class="movie-list">
+                    <ul>
+                        <!-- here items -->
+                    </ul>
+                </div>
+            </fieldset>
+
+            <div class="total-length">All movies lenght:
+                <span>-</span>
+            </div>
+    </form>
+
+    <!-- Include out JS file -->
+    <script type="module">
+        import { init } from "./js/app.js";
+        document.addEventListener("DOMContentLoaded", function (event) {
+            console.log('DOM fully loaded and parsed!');
+            init();
+        });
+    </script>
+</body>
+
+</html>
